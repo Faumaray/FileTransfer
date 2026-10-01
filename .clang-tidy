@@ -1,0 +1,70 @@
+Checks: >
+    *, 
+    -llvmlibc-*,
+    -modernize-use-trailing-return-type,
+    -fuchsia-default-arguments-calls,
+    -fuchsia-default-arguments-declarations,
+    -llvm-include-order,
+    -fuchsia-multiple-inheritance,
+    -fuchsia-statically-constructed-objects,
+    -altera-unroll-loops,
+    -cppcoreguidelines-avoid-magic-numbers,
+    -google-build-using-namespace,
+    -hicpp-uppercase-literal-suffix,
+    -readability-uppercase-literal-suffix,
+    -readability-convert-member-functions-to-static,
+    -fuchsia-overloaded-operator,
+    -altera-struct-pack-align,
+    -altera-id-dependent-backward-branch,
+    -cppcoreguidelines-pro-type-reinterpret-cast,
+    -cert-err58-cpp
+    
+WarningsAsErrors: "readability-implicit-bool-conversion"
+
+CheckOptions:
+  - { key: readability-identifier-naming.ClassCase,              value: CamelCase  }
+  - { key: readability-identifier-naming.ClassConstantCase,      value: camelBack  }
+  - { key: readability-identifier-naming.ClassMemberCase,        value: camelBack }
+  - { key: readability-identifier-naming.ClassMethodCase,        value: camelBack }
+  - { key: readability-identifier-naming.ConceptCase,            value: CamelCase }
+  - { key: readability-identifier-naming.ConstantCase,           value: UPPER_CASE }
+  - { key: readability-identifier-naming.ConstantMemberCase,     value: camelBack }
+  - { key: readability-identifier-naming.ConstantParameterCase,  value: camelBack }
+  - { key: readability-identifier-naming.ConstantPointerParameterCase,  value: camelBack }
+  - { key: readability-identifier-naming.ConstexprFunctionCase,  value: camelBack }
+  - { key: readability-identifier-naming.ConstexprMethodCase,    value: camelBack }
+  - { key: readability-identifier-naming.ConstexprVariableCase,  value: UPPER_CASE }
+  - { key: readability-identifier-naming.EnumCase,               value: CamelCase }
+  - { key: readability-identifier-naming.EnumConstantCase,       value: CamelCase }
+  - { key: readability-identifier-naming.FunctionCase,           value: camelBack  }
+  - { key: readability-identifier-naming.GlobalConstantCase,     value: UPPER_CASE  }
+  - { key: readability-identifier-naming.GlobalConstantPointerCase, value: UPPER_CASE  }
+  - { key: readability-identifier-naming.GlobalFunctionCase,     value: camelBack  }
+  - { key: readability-identifier-naming.LocalConstantCase,     value: camelBack  }
+  - { key: readability-identifier-naming.LocalVariableCase,     value: camelBack  }
+  - { key: readability-identifier-naming.MacroDefinitionCase,     value: UPPER_CASE  }
+  - { key: readability-identifier-naming.NamespaceCase,          value: lower_case }
+  - { key: readability-identifier-naming.StructCase,             value: CamelCase  }
+  - { key: readability-identifier-naming.TemplateParameterCase,  value: UPPER_CASE  }
+  - { key: readability-identifier-naming.VariableCase,           value: camelBack }
+  - { key: readability-identifier-naming.PrivateMemberPrefix,    value: m_          }
+  - { key: readability-identifier-naming.EnumConstantCase,         value: CamelCase }
+  - { key: readability-identifier-naming.ConstexprVariableCase,    value: UPPER_CASE }
+  - { key: readability-identifier-naming.GlobalConstantCase,       value: UPPER_CASE }
+  - { key: readability-identifier-naming.MemberConstantCase,       value: camelBack }
+  - { key: readability-identifier-naming.StaticConstantCase,       value: camelBack }
+  - { key: readability-function-cognitive-complexity.Threshold, value: 7}
+  - { key: readability-function-size.LineThreshold, value: 30}
+  - { key: readability-function-size.ParameterThreshold, value: 3}
+  - { key: readability-function-size.VariableThreshold, value: 7}
+  - { key: readability-function-cognitive-complexity.IgnoreMacros, value: true}
+  - { key: readability-implicit-bool-conversion.AllowIntegerConditions,  value: 0   }
+  - { key: readability-implicit-bool-conversion.AllowPointerConditions,  value: 0   }
+  - { key: readability-function-cognitive-complexity.IgnoreMacros,  value: 1   }
+  - { key: readability-identifier-length.MinimumLoopCounterNameLength,  value: 1   }
+  - { key: readability-identifier-length.IgnoredVariableNames,  value: 'i|j|it|ip|os'   }
+  - { key: readability-identifier-length.IgnoredParameterNames,  value: 'i|j|it|ip|os'   }
+  - { key: readability-identifier-length.IgnoredLoopCounterNames,  value: 'i|j|it|ip|os'   }
+  - { key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic,  value: 1   }
+  - { key: readability-magic-numbers.IgnoredIntegerValues,  value: 1 }
+  - { key: readability-magic-numbers.IgnoreUserDefinedLiterals,  value: 1 }
