@@ -1,4 +1,4 @@
-#include "ftu/logging/logger.hpp"
+#include <ftu/logging/logger.hpp>
 
 #include <array>
 #include <chrono>

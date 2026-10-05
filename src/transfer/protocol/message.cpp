@@ -1,10 +1,10 @@
-#include "ftu/transfer/protocol/message.hpp"
-#include "ftu/checksum/crc64.hpp"
-#include "ftu/transfer/protocol/constants.hpp"
-#include "ftu/transfer/protocol/decoder.hpp"
-#include "ftu/transfer/protocol/encoder.hpp"
-#include "ftu/transfer/protocol/file_metadata.hpp"
+#include <ftu/transfer/protocol/message.hpp>
 
+#include <ftu/checksum/crc64.hpp>
+#include <ftu/transfer/protocol/constants.hpp>
+#include <ftu/transfer/protocol/decoder.hpp>
+#include <ftu/transfer/protocol/encoder.hpp>
+#include <ftu/transfer/protocol/file_metadata.hpp>
 namespace ftu::transfer::protocol
 {
 	Message Message::progress(MessageType type, std::uint64_t offset, std::uint64_t crc)

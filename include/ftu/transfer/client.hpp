@@ -1,12 +1,12 @@
 #pragma once
 
-#include "ftu/transfer/client/source_file.hpp"
-#include "ftu/transfer/options.hpp"
-#include "ftu/transfer/protocol/channel.hpp"
-#include "ftu/transfer/protocol/file_metadata.hpp"
-#include "ftu/transfer/protocol/message.hpp"
-#include "ftu/transfer/protocol/progress.hpp"
-#include "ftu/transfer/transport/connector.hpp"
+#include <ftu/transfer/client/source_file.hpp>
+#include <ftu/transfer/options.hpp>
+#include <ftu/transfer/protocol/channel.hpp>
+#include <ftu/transfer/protocol/file_metadata.hpp>
+#include <ftu/transfer/protocol/message.hpp>
+#include <ftu/transfer/protocol/progress.hpp>
+#include <ftu/transfer/transport/connector.hpp>
 
 #include <cstdint>
 #include <filesystem>

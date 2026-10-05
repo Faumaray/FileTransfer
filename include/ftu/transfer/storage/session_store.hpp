@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ftu/platform/file_descriptor.hpp"
-#include "ftu/transfer/protocol/file_metadata.hpp"
+#include <ftu/platform/file_descriptor.hpp>
+#include <ftu/transfer/protocol/file_metadata.hpp>
 
 #include <cstdint>
 #include <filesystem>

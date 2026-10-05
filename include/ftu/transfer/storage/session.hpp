@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ftu/checksum/crc64.hpp"
-#include "ftu/transfer/protocol/file_metadata.hpp"
+#include <ftu/checksum/crc64.hpp>
+#include <ftu/transfer/protocol/file_metadata.hpp>
 
 #include <cstdint>
 #include <filesystem>

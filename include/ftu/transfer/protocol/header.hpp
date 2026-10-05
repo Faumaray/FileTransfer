@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ftu/transfer/protocol/message_type.hpp"
+#include <ftu/transfer/protocol/message_type.hpp>
 
 #include <cstdint>
 
