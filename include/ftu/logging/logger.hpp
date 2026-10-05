@@ -12,6 +12,7 @@ namespace ftu::logging
 	class Logger
 	{
 	public:
+		// TODO: upgrade gcc version and use std::format
 		Logger() = delete;
 
 		template <class... ARGS>

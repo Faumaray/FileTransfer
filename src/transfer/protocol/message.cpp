@@ -12,7 +12,7 @@ namespace ftu::transfer::protocol
 		Encoder out;
 		out.writeInteger<std::uint64_t>(offset);
 		out.writeInteger<std::uint64_t>(crc);
-		return {type, std::move(out).releaseBuffer()};
+		return {.type = type, .payload = std::move(out).releaseBuffer()};
 	}
 
 	Message Message::error(ErrorCode code, std::string_view text)
@@ -20,14 +20,14 @@ namespace ftu::transfer::protocol
 		Encoder out;
 		out.writeInteger<std::uint32_t>(static_cast<std::uint32_t>(code));
 		out.writeString(text.substr(0, 1024));
-		return {MessageType::Error, std::move(out).releaseBuffer()};
+		return {.type = MessageType::Error, .payload = std::move(out).releaseBuffer()};
 	}
 
 	Message Message::done(std::string_view saved_name)
 	{
 		Encoder out;
 		out.writeString(saved_name);
-		return {MessageType::Done, std::move(out).releaseBuffer()};
+		return {.type = MessageType::Done, .payload = std::move(out).releaseBuffer()};
 	}
 
 	Progress Message::asProgress(MessageType expected) const
@@ -40,7 +40,7 @@ namespace ftu::transfer::protocol
 		const auto offset = in.readInteger<std::uint64_t>();
 		const auto crc = in.readInteger<std::uint64_t>();
 		in.requireEnd();
-		return {offset, crc};
+		return {.byte_offset = offset, .prefix_crc64 = crc};
 	}
 
 	Error Message::asError() const
@@ -120,7 +120,7 @@ namespace ftu::transfer::protocol
 		{
 			throw Error(ErrorCode::Limit, "payload limit exceeded");
 		}
-		return {static_cast<MessageType>(rawType), size, payloadCrc};
+		return {.type = static_cast<MessageType>(rawType), .payload_size = size, .payload_crc64 = payloadCrc};
 	}
 
 	Message Message::decode(std::span<const std::uint8_t> bytes)
@@ -139,6 +139,6 @@ namespace ftu::transfer::protocol
 		{
 			throw Error(ErrorCode::Integrity, "payload CRC64 mismatch");
 		}
-		return {header.type, std::move(body)};
+		return {.type = header.type, .payload = std::move(body)};
 	}
 } // namespace ftu::transfer::protocol

@@ -8,6 +8,7 @@
 
 namespace
 {
+	// FIXME(Global): remove exceptions and move Result types, upgrade gcc version
 	namespace transfer = ftu::transfer;
 	namespace unix_socket = ftu::transfer::transport::unix_socket;
 

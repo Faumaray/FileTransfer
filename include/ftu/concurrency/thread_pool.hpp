@@ -12,6 +12,7 @@ namespace ftu::concurrency
 {
 	class ThreadPool
 	{
+		// TODO: upgrade minimal gcc version and use jthread
 	public:
 		explicit ThreadPool(std::size_t worker_count, std::size_t capacity);
 		~ThreadPool();

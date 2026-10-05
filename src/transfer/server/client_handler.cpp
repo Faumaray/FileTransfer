@@ -58,7 +58,6 @@ namespace ftu::transfer::server
 		}
 		catch (const std::system_error& error)
 		{
-			// Socket disconnects cannot receive an error response.
 			if (error.code().value() == EPIPE || error.code().value() == ECONNRESET)
 			{
 				return 0;
